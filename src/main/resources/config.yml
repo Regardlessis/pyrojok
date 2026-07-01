@@ -1,0 +1,42 @@
+# StunPop configuration
+# This plugin uses Paper/Purpur's PlayerShieldDisableEvent, so it is for Paper/Purpur, not plain Spigot.
+
+# How long after an axe shield-disable the follow-up hit may trigger the upward pop.
+follow-up-window-ticks: 14
+
+# Upward velocity applied to the shield-disabled player on the follow-up hit.
+# 0.45 = small hop, 0.60 = noticeable pop, 0.80+ = strong launch.
+vertical-velocity: 0.62
+
+# Add some horizontal push in the attacker's facing direction.
+add-horizontal-velocity: true
+horizontal-velocity: 0.18
+
+# Follow-up weapon requirement: ANY, MACE, AXE, SWORD, or NONE.
+# ANY = any held item can trigger the pop.
+# MACE = only a mace follow-up triggers the pop.
+# AXE = only an axe follow-up triggers the pop.
+follow-up-weapon: ANY
+
+# If greater than 0, attacker must have at least this fall distance for the follow-up to pop.
+# Useful for mace-only stun-slam servers. Keep 0.0 for simple testing.
+minimum-attacker-fall-distance: 0.0
+
+# Clears the victim's invulnerability ticks when their shield is disabled.
+# Keep this true together with Paper's:
+# unsupported-settings.skip-vanilla-damage-tick-when-shield-blocked: true
+clear-no-damage-ticks-on-shield-disable: true
+
+# Clears invulnerability ticks again right before applying the pop.
+clear-no-damage-ticks-on-follow-up: true
+
+# If true, only the same player who disabled the shield can trigger the pop.
+require-same-attacker: true
+
+# Optional: force shield cooldown length after a shield is disabled.
+# -1 means keep vanilla/Paper cooldown. Use 0 only if you know what you're doing.
+shield-cooldown-ticks: -1
+
+# Effects are cosmetic only.
+play-sound: true
+spawn-particles: true

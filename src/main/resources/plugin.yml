@@ -1,0 +1,15 @@
+name: StunPop
+version: 1.0.0
+main: com.example.stunpop.StunPopPlugin
+api-version: '1.21'
+description: Adds MCPvP-style upward pop after axe shield-disable follow-up hits.
+author: ChatGPT
+commands:
+  stunpop:
+    description: Reload StunPop configuration
+    usage: /stunpop reload
+    permission: stunpop.admin
+permissions:
+  stunpop.admin:
+    description: Allows reloading StunPop
+    default: op
